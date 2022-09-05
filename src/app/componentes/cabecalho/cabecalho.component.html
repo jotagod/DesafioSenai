@@ -3,30 +3,58 @@
     <a class="navbar-brand">
       <i
         class="fa fa-bars mr-2"
+        style="margin-left: 10px"
         (click)="menu.abreMenu()"
         (keyup.space)="menu.abreMenu()"
       ></i>
     </a>
 
     <app-menu #menu>
-      <ul class="list-unstyled bg-light text-success">
-        <li>
-          <img src="assets/img/ford.png" alt="Logo da Ford" width="33%" />
+      <ul class="list-unstyled" style="background-color: #d0d0d0">
+        <li style="background-color: white">
+          <img
+            style="margin: 0 0 10px 15px"
+            src="assets/img/ford.png"
+            alt="Logo da Ford"
+            width="33%"
+          />
         </li>
         <li>
-          <p>Home</p>
+          <p
+            style="
+              color: green;
+              font-weight: bold;
+              margin: 0 0 10px 15px;
+              padding: 10px;
+            "
+          >
+            Home
+          </p>
         </li>
         <li>
-          <a style="cursor: pointer" routerLink="/dashboard">Dashboard</a>
+          <a
+            style="
+              cursor: pointer;
+              color: green;
+              font-weight: bold;
+              margin: 0 0 10px 15px;
+              padding: 10px;
+            "
+            routerLink="/dashboard"
+            >Dashboard</a
+          >
         </li>
       </ul>
     </app-menu>
 
     <div *ngIf="user$ | async as user">
-      <i class="fa fa-user-circle mr-1"></i>
-      <a class="mr-1">{{ user.name }}</a>
-      <br>
-      <a style="cursor: pointer" (click)="logout()">Logout</a>
+      <a class="mr-1 text-decoration-none"
+        ><i class="fa fa-user-circle mr-1"></i> {{ user.name }}</a
+      >
+      <br />
+      <button type="button" class="btn btn-danger">
+        <a (click)="logout()">Logout</a>
+      </button>
     </div>
   </nav>
 </header>
