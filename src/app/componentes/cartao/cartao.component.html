@@ -1,0 +1,12 @@
+<div class="card text-center">
+  <h4 class="card-header" style="text-align: left" *ngIf="titulo">
+    {{ titulo }}
+  </h4>
+  <div
+    class="card-body text-justify"
+    style="min-height: 90px; text-align: left"
+  >
+    <ng-content></ng-content>
+  </div>
+  <div class="card-footer" *ngIf="nota">{{ nota }}</div>
+</div>
